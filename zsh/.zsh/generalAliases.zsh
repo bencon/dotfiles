@@ -14,6 +14,8 @@ alias e="exit"
 alias v="stty stop '' -ixoff ; vim"
 alias ka="killall xterm"
 alias zrc="vim ~/.zshrc"
-
 # alias diff="colordiff"
+
+# Reload Herbstluftwm
+alias hr="~/.config/herbstluftwm/autostart && herbstclient reload"
 

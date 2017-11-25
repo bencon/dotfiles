@@ -82,7 +82,7 @@ hc keybind $Mod-Shift-l shift right
 #hc keybind $Mod-l echo "test"
 
 # colors
-feh --bg-center ./blue1.jpg #wallpaper
+feh --bg-center ~/.config/herbstluftwm/blue1.jpg #wallpaper
 hc set frame_border_active_color '#000000' #reddish
 hc set frame_border_normal_color '#1B1100' #color of top panel
 hc set frame_bg_normal_color '#0D3D5F' #bright blue
@@ -97,7 +97,7 @@ hc set frame_bg_transparent 1
 hc set frame_transparent_width 10
 hc set frame_gap 2
 # add overlapping window borders
-hc set window_gap 10
+hc set window_gap 1
 hc set frame_padding 2
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1

@@ -94,39 +94,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-#
-#
-#
-#
-#
-#
-#
-# Move this stuff elsewhere
-#
-#
-# Set vim as default editor
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-
-# increase scroll rates
-xset r rate 190 60
-
-commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp} --exclude=tags --exclude-dir={.svn,node_modules,documentation,affinity-engine,sigma,business-logic}"
-
-# General Aliases
-alias grepc="grep --color=always $commonExclude -Irn"
-alias grepc="grep --color=always $commonExclude -Irn"
-alias grepc="grep --color=always $commonExclude -Irn"
-alias gc="grepc -i"
-alias grepnc="grep $commonExclude -Irn"
-alias grepf="grep $commonExclude -rIl" # get file name only to pass to other scripts like sed
-alias egrepc="egrep --color=always -n"
-alias lessr="less -R"
-alias sel="pwd | xsel -i"
-alias e="exit"
-alias debugr="ui && grepf debugger | xargs sed -i '/debugger/d'" # remove all instances of debugger in project
-
-#alias diff="colordiff"
-alias v="stty stop '' -ixoff ; vim"
-
-set -o vi
+# Load other config files
+for config (~/.zsh/*.zsh) source $config

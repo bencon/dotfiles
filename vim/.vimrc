@@ -45,9 +45,7 @@ vnoremap // y/<C-R>"<CR>
 "nnoremap <S-b> <C-b>
 nnoremap <C-]> <A-]>
 " nnoremap zt zh
-
-execute pathogen#infect()
-Helptags
+"
 syntax on
 filetype plugin indent on
 
@@ -70,14 +68,6 @@ nmap ,cl :let @+=expand("%:p")<CR>
 " When modifying files, update them instead of overwriting. Only use this so
 " that the crome debugger recognizes files updates
 set backupcopy=yes
-
-
-
-" Track the engine.
-" Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-" Plugin 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"

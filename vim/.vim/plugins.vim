@@ -19,5 +19,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 call plug#end()

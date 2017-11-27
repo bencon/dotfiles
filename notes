@@ -1,0 +1,82 @@
+Some notes on packages needed to setup my system. I intend to convert this to vagrantfile
+
+lightdm
+stow
+herbstluftwm
+python-pip
+feh # set desktop background
+
+mkdir -p ~/.config/herbstluftwm
+cp /etc/xdg/herbstluftwm/autostart ~/.config/herbstluftwm/
+
+# vim8
+sudo add-apt-repository ppa:jonathonf/vim && sudo apt update && sudo apt install vim-gtk
+
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# start visual desktop manager
+sudo service lightdm start
+
+sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+sudo VBoxClient --clipboard
+sudo VBoxClient --draganddrop
+sudo VBoxClient --display
+sudo VBoxClient --checkhostversion
+sudo VBoxClient --seamless
+
+#zsh
+sudo apt-get install zsh
+sudo usermod -s /bin/zsh <username>
+
+#oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#Attempts to get X11 workign - probably very excessive - I don't think this did me any good
+sudo apt-get install xorg openbox
+sudo apt-get install ubuntu-desktop ubuntu-standard ubuntu-minimal
+
+# powerline fonts - is this useless?
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+
+# store git credentials and other settings
+git config credential.helper store
+git config --global push.default simple
+
+# Get fira font
+wget https://github.com/carrois/Fira/archive/master.zip
+unzip master.zip
+sudo mkdir -p /usr/share/fonts/opentype/fira_code
+sudo mkdir -p /usr/share/fonts/opentype/fira_mono
+sudo mkdir -p /usr/share/fonts/opentype/fira_sans
+sudo cp Fira-master/Fira_Code_3_2/Fonts/FiraCode_OTF_32/* /usr/share/fonts/opentype/fira_code
+sudo cp Fira-master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/* /usr/share/fonts/opentype/fira_mono
+sudo cp Fira-master/Fira_Sans_4_2/Fonts/FiraSans_OTF_4203/Normal/Roman/* /usr/share/fonts/opentype/fira_sans
+sudo cp Fira-master/Fira_Sans_4_2/Fonts/FiraSans_OTF_4203/Normal/Italic/* /usr/share/fonts/opentype/fira_sans
+rm -rf Fira-master
+
+
+# load Xresources
+xrdb ~/.Xresources
+
+# needed for folder sharing ( probably not actually needed)
+sudo apt-get -y install dkms build-essential linux-headers-$(uname -r) virtualbox-guest-additions-iso
+
+# newer node version
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# vim markdown viewer
+pip install grip
+
+notes:
+from vim run :PlugInstall

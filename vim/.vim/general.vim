@@ -78,3 +78,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Necessary for JamshedVesuna/vim-markdown-preview
+let vim_markdown_preview_github=1

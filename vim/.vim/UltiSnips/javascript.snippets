@@ -1,0 +1,30 @@
+#.then
+snippet th "description"
+.then((${1:val}) => {
+	${2}
+})
+endsnippet
+
+#.catch
+snippet cat "description"
+.catch((${1:err}) => {
+	${2}
+})
+endsnippet
+
+#promise
+snippet prom "description"
+new Promise((resolve${1:, reject}) => {
+	${2}
+})
+endsnippet
+
+#throw default error
+snippet thr "description"
+throw "someError"
+endsnippet
+
+#debugger
+snippet de "description"
+debugger
+endsnippet

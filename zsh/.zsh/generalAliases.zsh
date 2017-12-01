@@ -14,6 +14,7 @@ alias e="exit"
 alias v="stty stop '' -ixoff ; vim"
 alias ka="killall xterm"
 alias zrc="vim ~/.zshrc"
+alias snips="vim ~/.vim/UltiSnips/javascript.snippets"
 # alias diff="colordiff"
 
 # Reload Herbstluftwm

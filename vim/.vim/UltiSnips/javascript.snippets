@@ -38,3 +38,37 @@ endsnippet
 snippet cl "description"
 console.log(${1:here})
 endsnippet
+
+#logger log
+snippet ll "description"
+logger.log('info', \`${1:val}\`)
+endsnippet
+
+#require
+snippet re "description"
+const ${1:lib} = require('${2:lib}')
+endsnippet
+
+##########################################################################
+
+#require util
+snippet rut "description"
+const util = require('util')
+endsnippet
+
+#util.inspect
+snippet in "description"
+util.inspect(${1:val}, {depth:null})
+endsnippet
+
+#console log util.inspect
+snippet cin "description"
+console.log('${1:obj}' + util.inspect(${2:val}, {depth:null}))
+endsnippet
+
+#logger log util.inspect
+snippet lin "description"
+logger.log('info', '${1:obj }' + util.inspect(${2:val}, {depth:null}))
+endsnippet
+
+##########################################################################

@@ -96,3 +96,5 @@ source $ZSH/oh-my-zsh.sh
 #
 # Load other config files
 for config (~/.zsh/*.zsh) source $config
+
+eval `dircolors ~/.dir_colors/dircolors.256dark`

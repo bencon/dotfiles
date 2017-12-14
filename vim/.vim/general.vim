@@ -5,14 +5,18 @@ set number
 set relativenumber
 set shiftwidth=4
 set et
-map - "+y
-map _ "+p
-vnoremap = "*y
-map + "*p
 set t_Co=256
 set cursorline
 set list
 set noswapfile
+set ignorecase
+set smartcase
+
+map - "+y
+map _ "+p
+vnoremap = "*y
+map + "*p
+nnoremap Z :w!<CR>
 
 " allow toggling between local and default mode
 function TabToggle()
@@ -43,41 +47,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 vnoremap // y/<C-R>"<CR>
-"nnoremap <S-f> <C-f>  " S-f is used for reverse searching
-"nnoremap <S-b> <C-b>
 nnoremap <C-]> <A-]>
-" nnoremap zt zh
-"
+
 syntax on
 filetype plugin indent on
 
-set ignorecase
-set smartcase
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
 nmap ,cl :let @+=expand("%:p")<CR>
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-" let g:syntastic_c_checkers=['splint'] " causes failure
 
 
 " When modifying files, update them instead of overwriting. Only use this so
 " that the crome debugger recognizes files updates
 set backupcopy=yes
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Necessary for JamshedVesuna/vim-markdown-preview
-let vim_markdown_preview_github=1

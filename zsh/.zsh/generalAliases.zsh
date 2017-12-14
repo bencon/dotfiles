@@ -1,10 +1,11 @@
 commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp} --exclude=tags"
-excludeDirs="--exclude-dir={.svn,node_modules,documentation,affinity-engine,sigma,business-logic}"
-excludeAll="$commonExclude $excludeDirs"
+excludeAllDirs="--exclude-dir={.svn,node_modules,documentation,affinity-engine,sigma,business-logic}"
+excludeSomeDirs="--exclude-dir={.svn,node_modules,documentation}"
+excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
 
 # General Aliases
 alias grepc="grep --color=always $excludeAll -Irn"
-alias grepe="grep --color=always $commonExclude -Irn"
+alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Irn"
 alias gc="grepc -i"
 alias grepnc="grep $excludeAll -Irn"
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed

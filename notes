@@ -4,6 +4,7 @@ lightdm
 stow
 herbstluftwm
 python-pip
+xsel
 feh # set desktop background
 
 mkdir -p ~/.config/herbstluftwm

@@ -13,7 +13,7 @@ snippet cat "description"
 endsnippet
 
 #promise
-snippet prom "description"
+snippet pr "description"
 new Promise((resolve${1:, reject}) => {
 	${2}
 })
@@ -39,14 +39,29 @@ snippet cl "description"
 console.log(${1:here})
 endsnippet
 
-#logger log
-snippet ll "description"
+#logger info
+snippet li "description"
 logger.log('info', \`${1:val}\`)
+endsnippet
+
+#logger err
+snippet le "description"
+logger.log('error', \`${1:val}\`)
 endsnippet
 
 #require
 snippet re "description"
 const ${1:lib} = require('${2:lib}')
+endsnippet
+
+#fixme
+snippet F "description"
+// FIXME - 
+endsnippet
+
+#todo
+snippet T "description"
+// TODO - 
 endsnippet
 
 ##########################################################################

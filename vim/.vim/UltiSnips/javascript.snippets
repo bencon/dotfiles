@@ -34,9 +34,29 @@ snippet r "description"
 return
 endsnippet
 
+#return true
+snippet rt "description"
+return true
+endsnippet
+
+#return false
+snippet rf "description"
+return false
+endsnippet
+
 #console log
 snippet cl "description"
+console.log('${1:here}')
+endsnippet
+
+#console log no quotes
+snippet cln "description"
 console.log(${1:here})
+endsnippet
+
+#console error
+snippet ce "description"
+console.error(${1:err})
 endsnippet
 
 #logger info

@@ -5,6 +5,7 @@ excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
 
 # General Aliases
 alias grepc="grep --color=always $excludeAll -Irn"
+alias grepcn="grep --color=always $commonExclude -Irn"
 alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Irn"
 alias gc="grepc -i"
 alias grepnc="grep $excludeAll -Irn"

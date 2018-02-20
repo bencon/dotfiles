@@ -19,6 +19,7 @@ map + "*p
 nnoremap Z :w!<CR>
 imap <M-[> <Esc>
 imap <M-;> <Esc>
+" imap <M-p> <C-p>  -- not working
 
 " allow toggling between local and default mode
 function TabToggle()

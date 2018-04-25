@@ -65,6 +65,7 @@ sudo cp Fira-master/Fira_Sans_4_2/Fonts/FiraSans_OTF_4203/Normal/Roman/* /usr/sh
 sudo cp Fira-master/Fira_Sans_4_2/Fonts/FiraSans_OTF_4203/Normal/Italic/* /usr/share/fonts/opentype/fira_sans
 rm -rf Fira-master
 
+sudo apt-get install exuberant-ctags
 
 # load Xresources
 xrdb ~/.Xresources

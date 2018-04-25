@@ -50,7 +50,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 vnoremap // y/<C-R>"<CR>
-nnoremap <C-]> <A-]>
+" nnoremap <C-]> <A-]>
 
 syntax on
 filetype plugin indent on
@@ -58,7 +58,8 @@ filetype plugin indent on
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
 nmap ,cl :let @+=expand("%:p")<CR>
 
-
 " When modifying files, update them instead of overwriting. Only use this so
 " that the crome debugger recognizes files updates
 set backupcopy=yes
+
+set tags=./tags;~/insight

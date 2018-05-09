@@ -77,6 +77,10 @@ sudo apt-get -y install dkms build-essential linux-headers-$(uname -r) virtualbo
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+# linters
+npm install -g sass-lint
+npm install -g eslint
+
 # vim markdown viewer
 pip install grip
 

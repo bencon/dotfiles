@@ -17,6 +17,7 @@ map _ "+p
 vnoremap = "*y
 map + "*p
 nnoremap Z :w!<CR>
+nnoremap X :wq<CR>
 imap <M-[> <Esc>
 imap <M-;> <Esc>
 " imap <M-p> <C-p>  -- not working

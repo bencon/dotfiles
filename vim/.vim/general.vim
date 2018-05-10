@@ -12,6 +12,9 @@ set noswapfile
 set ignorecase
 set smartcase
 
+" scss specific settings to avoid slowdowns
+autocmd Filetype scss setlocal norelativenumber nocursorline
+
 map - "+y
 map _ "+p
 vnoremap = "*y

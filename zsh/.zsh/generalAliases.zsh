@@ -9,6 +9,7 @@ alias grepcn="grep --color=always $commonExclude -Irn"
 alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Irn"
 alias gc="grepc -i"
 alias grepnc="grep $excludeAll -Irn"
+alias gnc=grepnc
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
 alias egrepc="egrep --color=always -n"
 alias lessr="less -R"

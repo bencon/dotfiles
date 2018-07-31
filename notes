@@ -48,6 +48,9 @@ cd fonts
 cd ..
 rm -rf fonts
 
+# for universal ctags
+sudo apt-get install autoconf
+
 
 # store git credentials and other settings
 git config credential.helper store

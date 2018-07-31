@@ -23,6 +23,7 @@ nnoremap Z :w!<CR>
 nnoremap X :wq<CR>
 imap <M-[> <Esc>
 imap <M-;> <Esc>
+" imap <M-'> <Esc>:w<CR>  -- not working :(
 " imap <M-p> <C-p>  -- not working
 
 " allow toggling between local and default mode

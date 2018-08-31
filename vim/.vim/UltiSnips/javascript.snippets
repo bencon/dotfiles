@@ -19,6 +19,13 @@ new Promise((resolve${1:, reject}) => {
 })
 endsnippet
 
+#anonymous fnc
+snippet () "description"
+$1 = ($2) => {
+	$3
+}
+endsnippet
+
 #throw default error
 snippet thr "description"
 throw "someError"
@@ -34,10 +41,17 @@ snippet r "description"
 return
 endsnippet
 
-#not return
-snippet nr "description"
+##not return
+#snippet nr "description"
+#if (!${1:temp}) {
+#	${2:return}
+#}
+#endsnippet
+
+#if not
+snippet in "description"
 if (!${1:temp}) {
-	return
+	$2
 }
 endsnippet
 
@@ -92,37 +106,66 @@ snippet f "description"
 endsnippet
 
 #todo
-snippet t "description"
+snippet td "description"
 // TODO - 
+endsnippet
+
+#this.
+snippet t "description"
+this.
+endsnippet
+
+#################################################### Automated Testing
+
+#e2e test
+snippet test "description"
+// ${2:TODO}
+test('$1', async (t) => {
+	$3
+}
 endsnippet
 
 #################################################### Array methods
 
 #forEach
-snippet fe "description"
-${1:}.forEach((${2:val}) => {
-	${3:}
+snippet .fe "description" i
+.forEach((${1:val}) => {
+	${2:}
 })
 endsnippet
 
 #map
-snippet map "description"
-${1:}.map((${2:val}) => {
-	${3:}
+snippet .map "description" i
+.map((${1:val}) => {
+	${2:}
 })
 endsnippet
 
 #some
-snippet sm "description"
-${1:}.some((${2:val}) => {
-	${3:}
+snippet .sm "description" i
+.some((${1:val}) => {
+	${2:}
 })
 endsnippet
 
 #filter
-snippet fil "description"
-${1:}.filter((${2:val}) => {
-	${3:}
+snippet .fil "description" i
+.filter((${1:val}) => {
+	${2:}
+})
+endsnippet
+
+#find
+snippet .fi "description" i
+.find((${1:val}) => {
+	${2:}
+})
+endsnippet
+
+#findIndex
+snippet .fin "description" i
+.findIndex((${1:val}) => {
+	${2:}
 })
 endsnippet
 
@@ -134,9 +177,9 @@ const util = require('util')
 endsnippet
 
 #util.inspect
-snippet in "description"
-util.inspect(${1:val}, {depth:null})
-endsnippet
+# snippet in "description"
+# util.inspect(${1:val}, {depth:null})
+# endsnippet
 
 #console log util.inspect
 snippet cin "description"
@@ -167,11 +210,11 @@ this.setState({
 });
 endsnippet
 
-snippet props "Get Property" i
+snippet p "Get Property"
 this.props.${1}
 endsnippet
 
-snippet state "Get State" i
+snippet ts "Get State"
 this.state.${1}
 endsnippet
 
@@ -231,7 +274,7 @@ endsnippet
 snippet pt "PropTypes Definition" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
 	${2:className}: ${3:PropTypes.string},
-};
+}
 endsnippet
 
 snippet  pta "PropTypes Array" w

@@ -1,3 +1,11 @@
+snippet l "temp snippet"
+if (options.transaction.primaryTableId && Object.keys($1._changed).length) {
+	auditLogQueue[options.transaction.primaryTableId].push(
+		\`\$\{Object.entries($1._changed)\}\`
+	)
+}
+endsnippet
+
 #.then
 snippet th "description"
 .then((${1:val}) => {
@@ -12,8 +20,16 @@ snippet cat "description"
 })
 endsnippet
 
-#promise
+#promise resolve
 snippet pr "description"
+return Promise.resolve()
+.then(() => {
+	${1}
+})
+endsnippet
+
+#promise
+snippet prom "description"
 new Promise((resolve${1:, reject}) => {
 	${2}
 })
@@ -70,6 +86,11 @@ snippet rf "description"
 return false
 endsnippet
 
+#push
+snippet .pu "description" i
+.push($1)
+endsnippet
+
 #console log
 snippet cl "description"
 console.log('${1:here}')
@@ -113,6 +134,18 @@ endsnippet
 #this.
 snippet t "description"
 this.
+endsnippet
+
+#module exports
+snippet me "description"
+module.exports.
+endsnippet
+
+#module exports function
+snippet mef "description"
+module.exports.$1 = ($2) {
+	$3
+}
 endsnippet
 
 #################################################### Automated Testing

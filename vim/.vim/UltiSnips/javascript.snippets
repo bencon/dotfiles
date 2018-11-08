@@ -1,14 +1,19 @@
-snippet l "temp snippet"
-if (options.transaction.primaryTableId && Object.keys($1._changed).length) {
-	auditLogQueue[options.transaction.primaryTableId].push(
-		\`\$\{Object.entries($1._changed)\}\`
-	)
-}
-endsnippet
+# snippet l "temp snippet"
+# if (options.transaction.primaryTableId && Object.keys($1._changed).length) {
+# 	auditLogQueue[options.transaction.primaryTableId].push(
+# 		\`\$\{Object.entries($1._changed)\}\`
+# 	)
+# }
+# endsnippet
 
 #.then
 snippet th "description"
 .then((${1:val}) => {
+endsnippet
+
+#.then
+snippet }t "description"
+}).then((${1:val}) => {
 	${2}
 })
 endsnippet
@@ -23,9 +28,6 @@ endsnippet
 #promise resolve
 snippet pr "description"
 return Promise.resolve()
-.then(() => {
-	${1}
-})
 endsnippet
 
 #promise
@@ -55,6 +57,11 @@ endsnippet
 #return
 snippet r "description"
 return
+endsnippet
+
+#function
+snippet fn "description"
+function
 endsnippet
 
 ##not return
@@ -143,9 +150,14 @@ endsnippet
 
 #module exports function
 snippet mef "description"
-module.exports.$1 = ($2) {
+module.exports.$1 = ($2) => {
 	$3
 }
+endsnippet
+
+#.length
+snippet .l "description" i
+.length
 endsnippet
 
 #################################################### Automated Testing

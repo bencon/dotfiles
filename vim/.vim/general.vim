@@ -15,16 +15,28 @@ set smartcase
 " scss specific settings to avoid slowdowns
 autocmd Filetype scss setlocal norelativenumber nocursorline
 
-map - "+y
-map _ "+p
+noremap - "+y
+noremap _ "+p
 vnoremap = "*y
-map + "*p
+noremap + "*p
 nnoremap Z :w!<CR>
 nnoremap X :wq<CR>
-imap <M-[> <Esc>
-imap <M-;> <Esc>
+nnoremap E :e!<CR>
+nnoremap Q :q!<CR>
+inoremap <M-[> <Esc>
+inoremap <M-;> <Esc>
+inoremap <M-g> blah
+inoremap <M-v> blah
+
 " imap <M-'> <Esc>:w<CR>  -- not working :(
 " imap <M-p> <C-p>  -- not working
+
+" not working :(
+" execute "set <M-e>=å"
+" execute "set <M-e>=^[e"
+" nnoremap <M-e> :e!<CR>
+" nnoremap å :e!<CR>
+" nnoremap <A-e> :e!<CR>
 
 " allow toggling between local and default mode
 function TabToggle()

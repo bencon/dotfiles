@@ -1,5 +1,5 @@
 commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql} --exclude=tags"
-excludeAllDirs="--exclude-dir={.svn,node_modules,documentation,affinity-engine,sigma,business-logic,build}"
+excludeAllDirs="--exclude-dir={.npm,.svn,node_modules,documentation,affinity-engine,sigma,business-logic,build}"
 excludeSomeDirs="--exclude-dir={.svn,node_modules,documentation}"
 excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
 
@@ -7,6 +7,8 @@ excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
 alias grepc="grep --color=always $excludeAll -Irn"
 alias grepcn="grep --color=always $commonExclude -Irn"
 alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Irn"
+alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
+alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gc="grepc -i"
 alias grepnc="grep $excludeAll -Irn"
 alias gnc=grepnc
@@ -25,3 +27,16 @@ alias ct="ctags -R --exclude=.git --exclude=node_modules --exclude=test --exclud
 alias ff="firefox &"
 alias t="tree"
 # alias diff="colordiff"
+
+# custom search by given file type
+gfile() {
+   if (( $# != 2 )) ; then
+       echo usage: parameter 1 file type, parameter 2 search string ;
+   else
+       echo grep --color=always --include=\*.$1 $excludeSomeDirs -Irn $2
+   fi
+}
+
+
+#find . -path ./node_modules -prune -o -name '*.md' -print | xargs grep --color=always -Irn "test"
+#find . -type d \( -path node_modules -o -path .svn -o -path documentation \) -prune -o -print | xargs grep --color=always -Irn "test"

@@ -6,6 +6,13 @@
 # }
 # endsnippet
 
+#.head
+snippet head "description"
+/**
+ * ${1}
+ */
+endsnippet
+
 #.then
 snippet th "description"
 .then((${1:val}) => {
@@ -35,6 +42,15 @@ snippet prom "description"
 new Promise((resolve${1:, reject}) => {
 	${2}
 })
+endsnippet
+
+#switch
+snippet sw "description"
+switch ($1) {
+case $2:
+case $3:
+default:
+}
 endsnippet
 
 #anonymous fnc
@@ -80,6 +96,16 @@ if (!${1:temp}) {
 }
 endsnippet
 
+#true
+snippet t "description"
+true
+endsnippet
+
+#true
+snippet f "description"
+false
+endsnippet
+
 #return
 snippet rn "description"
 return null
@@ -96,7 +122,7 @@ return false
 endsnippet
 
 #push
-snippet .pu "description" i
+snippet .p "description" i
 .push($1)
 endsnippet
 
@@ -108,11 +134,6 @@ endsnippet
 #console log no quotes
 snippet cln "description"
 console.log(${1:here})
-endsnippet
-
-#console log before
-snippet clb "description"
-console.log
 endsnippet
 
 #console error
@@ -131,7 +152,7 @@ logger.log('error', \`${1:val}\`)
 endsnippet
 
 #fixme
-snippet f "description"
+snippet fi "description"
 // FIXME - 
 endsnippet
 
@@ -140,8 +161,13 @@ snippet td "description"
 // TODO - 
 endsnippet
 
+#refactor
+snippet ref "description"
+refactor
+endsnippet
+
 #this.
-snippet t "description"
+snippet s "description"
 this.
 endsnippet
 

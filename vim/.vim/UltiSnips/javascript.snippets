@@ -37,11 +37,21 @@ snippet pr "description"
 return Promise.resolve()
 endsnippet
 
+#promise all
+snippet pa "description"
+return Promise.all()
+endsnippet
+
 #promise
 snippet prom "description"
 new Promise((resolve${1:, reject}) => {
 	${2}
 })
+endsnippet
+
+#promise
+snippet { "description"
+\$\{$1\} $2
 endsnippet
 
 #switch

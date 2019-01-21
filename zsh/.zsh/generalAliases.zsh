@@ -26,6 +26,7 @@ alias plugs="vim ~/.vim/plugins.vim"
 alias ct="ctags -R --exclude=.git --exclude=node_modules --exclude=test --exclude=sigma --exclude=lib --exclude=api/affinity-engine/*"
 alias ff="firefox &"
 alias t="tree"
+alias f="find . -iname"
 # alias diff="colordiff"
 
 # custom search by given file type

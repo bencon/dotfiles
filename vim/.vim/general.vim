@@ -20,7 +20,7 @@ noremap _ "+p
 vnoremap = "*y
 noremap + "*p
 nnoremap Z :w!<CR>
-nnoremap X :wq<CR>
+" nnoremap X :wq<CR>
 nnoremap E :e!<CR>
 nnoremap Q :q!<CR>
 inoremap <M-[> <Esc>

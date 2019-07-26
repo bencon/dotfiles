@@ -79,7 +79,7 @@ endsnippet
 
 #throw default error
 snippet thr "description"
-throw "someError"
+throw new Error(${1:'someError'})
 endsnippet
 
 #debugger
@@ -163,6 +163,9 @@ endsnippet
 
 #fixme
 snippet fi "description"
+// FIXME - 
+endsnippet
+snippet fm "description"
 // FIXME - 
 endsnippet
 
@@ -293,7 +296,7 @@ this.setState({
 });
 endsnippet
 
-snippet p "Get Property"
+snippet p "Get Property" i
 this.props.${1}
 endsnippet
 

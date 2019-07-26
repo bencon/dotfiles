@@ -1,4 +1,4 @@
-commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql} --exclude=tags"
+commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html} --exclude=tags"
 excludeAllDirs="--exclude-dir={.npm,.svn,node_modules,documentation,affinity-engine,sigma,business-logic,build}"
 excludeSomeDirs="--exclude-dir={.svn,node_modules,documentation}"
 excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
@@ -27,6 +27,8 @@ alias ct="ctags -R --exclude=.git --exclude=node_modules --exclude=test --exclud
 alias ff="firefox &"
 alias t="tree"
 alias f="find . -iname"
+alias agi="sudo apt-get install"
+alias h="history | vim -"
 # alias diff="colordiff"
 
 # custom search by given file type

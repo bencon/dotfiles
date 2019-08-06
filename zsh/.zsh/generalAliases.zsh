@@ -29,6 +29,7 @@ alias t="tree"
 alias f="find . -iname"
 alias agi="sudo apt-get install"
 alias h="history | vim -"
+alias l="ls -al"
 # alias diff="colordiff"
 
 # custom search by given file type

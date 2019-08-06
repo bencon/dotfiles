@@ -5,6 +5,10 @@ export VISUAL=/usr/bin/vim
 # Increase scroll rates
 xset r rate 190 60
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=10000
+HISTFILESIZE=10000
+
 # Set terminal vim mode
 set -o vi
 
@@ -19,3 +23,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Reload Herbstluftwm
 alias hr="~/.config/herbstluftwm/autostart && herbstclient reload"
+

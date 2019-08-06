@@ -12,7 +12,12 @@ zsh
 firefox
 markdown
 xdotool
+apache2 subversion libapache2-mod-svn libapache2-svn libsvn-dev
 feh # set desktop background
+
+#svn
+sudo a2enmod dav dav_svn
+sudo service apache2 restart
 
 # vim8
 sudo add-apt-repository ppa:jonathonf/vim && sudo apt update && sudo apt install vim-gtk
@@ -93,3 +98,9 @@ pip install grip
 
 notes:
 from vim run :PlugInstall
+
+# Use hosts dns resolver:
+https://superuser.com/questions/641933/how-to-get-virtualbox-vms-to-use-hosts-dns
+VBoxManage modifyvm "<VM name>" --natdnshostresolver1 on
+As a result, guest OS DNS requests will be intercepted and resolved using host DNS API, rather than having guest OS connect to external DNS servers as with  --natdnsproxy1 on.
+You can get the name of the VM by running VBoxManage list runningvms.

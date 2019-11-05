@@ -6,10 +6,12 @@ excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
 # General Aliases
 alias grepc="grep --color=always $excludeAll -Irn"
 alias grepcn="grep --color=always $commonExclude -Irn"
-alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Irn"
+alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Iirn"
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
+alias gch="grep --color=always --include=\*.h -Irn" #only search h files
 alias gc="grepc -i"
+alias gC="grepc"
 alias grepnc="grep $excludeAll -Irn"
 alias gnc=grepnc
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed

@@ -18,6 +18,10 @@
 " \   'scss': ['sass'],
 " \}
 
+" Disable ale in sigma dir
+let g:ale_pattern_options = {
+\   '.*sigma/.*\.js$': {'ale_enabled': 0},
+\}
 
 "let g:ale_set_loclist = 0
 let g:ale_lint_on_text_changed = 'never'

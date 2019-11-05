@@ -21,6 +21,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'juneedahamed/svnj.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()

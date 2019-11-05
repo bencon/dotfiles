@@ -1,5 +1,6 @@
 Some notes on packages needed to setup my system. I intend to convert this to vagrantfile
 
+tree
 lightdm
 stow
 herbstluftwm

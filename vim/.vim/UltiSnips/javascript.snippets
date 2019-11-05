@@ -92,6 +92,16 @@ snippet r "description"
 return
 endsnippet
 
+#let
+snippet l "description"
+let
+endsnippet
+
+#const
+snippet c "description"
+const
+endsnippet
+
 ##not return
 #snippet nr "description"
 #if (!${1:temp}) {
@@ -209,6 +219,11 @@ snippet test "description"
 test('$1', async (t) => {
 	$3
 }
+endsnippet
+
+#.only
+snippet on "description" i
+.only
 endsnippet
 
 #################################################### Array methods

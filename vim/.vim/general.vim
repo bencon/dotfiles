@@ -27,7 +27,7 @@ inoremap <M-[> <Esc>
 inoremap <M-;> <Esc>
 inoremap <M-g> blah
 inoremap <M-v> blah
-
+nmap cp :let @" = expand("%:p")<cr>
 " imap <M-'> <Esc>:w<CR>  -- not working :(
 " imap <M-p> <C-p>  -- not working
 

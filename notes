@@ -66,6 +66,9 @@ sudo apt-get install autoconf
 git config credential.helper store
 git config --global push.default simple
 
+# Fix all files detected as modified due to line endings:
+git config --global core.autocrlf true
+
 # Get fira font
 wget https://github.com/carrois/Fira/archive/master.zip
 unzip master.zip

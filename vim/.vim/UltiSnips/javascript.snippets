@@ -8,6 +8,13 @@
 
 #.head
 snippet head "description"
+/** @function ${1}
+ * ${2}
+ */
+endsnippet
+
+#.fh
+snippet fh "description"
 /**
  * ${1}
  */
@@ -226,6 +233,16 @@ snippet on "description" i
 .only
 endsnippet
 
+#pause
+snippet ps "description" i
+await app.client.pause(${1:1}000)
+endsnippet
+
+#react comp lib
+snippet uis "description" i
+"file:../../react-ui-components",
+endsnippet
+
 #################################################### Array methods
 
 #forEach
@@ -294,7 +311,7 @@ endsnippet
 
 ################################################# React & JSX
 
-snippet rf "description" i
+snippet fr "description" i
 <React.Fragment>$1</React.Fragment>
 endsnippet
 
@@ -318,7 +335,7 @@ snippet p "Get Property" i
 this.props.${1}
 endsnippet
 
-snippet ts "Get State"
+snippet ts "Get State" i
 this.state.${1}
 endsnippet
 

@@ -1,19 +1,21 @@
 commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html} --exclude=tags"
-excludeAllDirs="--exclude-dir={.npm,.svn,node_modules,documentation,affinity-engine,sigma,business-logic,build}"
-excludeSomeDirs="--exclude-dir={.svn,node_modules,documentation}"
-excludeAll="$commonExclude $otherExcludes $excludeAllDirs"
+nonCore="--exclude-dir={affinity-engine,sigma,business-logic}"
+excludeSomeDirs="--exclude-dir={.svn,.npm,node_modules,documentation,build}"
+excludeAll="$commonExclude $excludeSomeDirs $nonCore"
+excludeMost="$commonExclude $excludeSomeDirs"
 
 # General Aliases
 alias grepc="grep --color=always $excludeAll -Irn"
 alias grepcn="grep --color=always $commonExclude -Irn"
-alias grepe="grep --color=always $commonExclude $excludeSomeDirs -Iirn"
+alias grepe="grep --color=always $excludeMost -Iirn"
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gch="grep --color=always --include=\*.h -Irn" #only search h files
 alias gc="grepc -i"
 alias gC="grepc"
-alias grepnc="grep $excludeAll -Irn"
-alias gnc=grepnc
+#alias grepnc="grep $excludeAll -Irn"
+alias gnc="grepcn -i"
+alias gnC="grepcn"
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
 alias egrepc="egrep --color=always -n"
 alias lessr="less -R"
@@ -21,7 +23,7 @@ alias lr=lessr
 alias sel="pwd | xsel -i"
 alias e="exit"
 alias v="stty stop '' -ixoff ; vim"
-alias ka="killall xterm"
+alias ka="killall vim; killall -9 xterm"
 alias zrc="vim ~/.zshrc"
 alias snips="vim ~/.vim/UltiSnips/javascript.snippets"
 alias gita="vim ~/.zsh/gitAliases.zsh"

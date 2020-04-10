@@ -20,14 +20,17 @@ noremap _ "+p
 vnoremap = "*y
 noremap + "*p
 nnoremap Z :w!<CR>
-" nnoremap X :wq<CR>
 nnoremap E :e!<CR>
 nnoremap Q :q!<CR>
+nnoremap <S-f> <C-f>
+nnoremap <cr> <C-f>
 inoremap <M-[> <Esc>
 inoremap <M-;> <Esc>
 inoremap <M-g> blah
 inoremap <M-v> blah
 nmap cp :let @" = expand("%:p")<cr>
+nmap cf :let @" = expand("%:p")<cr>
+" nnoremap X :wq<CR>
 " imap <M-'> <Esc>:w<CR>  -- not working :(
 " imap <M-p> <C-p>  -- not working
 

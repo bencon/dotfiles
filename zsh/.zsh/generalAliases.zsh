@@ -5,14 +5,18 @@ excludeAll="$commonExclude $excludeSomeDirs $nonCore"
 excludeMost="$commonExclude $excludeSomeDirs"
 
 # General Aliases
-alias grepc="grep --color=always $excludeAll -Irn"
+alias grepCommon="grep --color=always $excludeAll -Irn"
+alias gc="grepCommon -i"
+alias gC="grepCommon"
+
 alias grepcn="grep --color=always $commonExclude -Irn"
-alias grepe="grep --color=always $excludeMost -Iirn"
+alias gm="grep $excludeMost -Iirn"
+alias gmc="grep --color=always $excludeMost -Iirn"
+
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gch="grep --color=always --include=\*.h -Irn" #only search h files
-alias gc="grepc -i"
-alias gC="grepc"
+
 #alias grepnc="grep $excludeAll -Irn"
 alias gnc="grepcn -i"
 alias gnC="grepcn"
@@ -33,7 +37,7 @@ alias ff="firefox &"
 alias t="tree"
 alias f="find . -iname"
 alias agi="sudo apt-get install"
-alias h="history | vim -"
+alias h="vim ~/.zsh_history"
 alias l="ls -al"
 # alias diff="colordiff"
 

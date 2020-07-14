@@ -23,7 +23,10 @@ nnoremap Z :w!<CR>
 nnoremap E :e!<CR>
 nnoremap Q :q!<CR>
 nnoremap <S-f> <C-f>
-nnoremap <cr> <C-f>
+nmap <M-a> <Plug>(ale_toggle)
+" nmap <M-g> :GBlame<CR> // doesn't work ?
+" nnoremap <space>gb :ALEToggle<CR>
+" nnoremap <cr> <C-f>
 inoremap <M-[> <Esc>
 inoremap <M-;> <Esc>
 inoremap <M-g> blah

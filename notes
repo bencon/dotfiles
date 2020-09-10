@@ -13,6 +13,7 @@ zsh
 firefox
 markdown
 xdotool
+xclip
 apache2 subversion libapache2-mod-svn libapache2-svn libsvn-dev
 feh # set desktop background
 

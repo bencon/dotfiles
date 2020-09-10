@@ -1,7 +1,8 @@
-commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html} --exclude=tags"
+commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html,htm,xml} --exclude=tags --exclude=.*"
+dotFileExclude="--exclude=.*"
 nonCore="--exclude-dir={affinity-engine,sigma,business-logic}"
-excludeSomeDirs="--exclude-dir={.svn,.npm,node_modules,documentation,build}"
-excludeAll="$commonExclude $excludeSomeDirs $nonCore"
+excludeSomeDirs="--exclude-dir={.svn,.npm,.cache,node_modules,documentation,build,keycloakWorkingDir,resources,static}"
+excludeAll="$commonExclude $excludeSomeDirs $nonCore $dotFileExclude"
 excludeMost="$commonExclude $excludeSomeDirs"
 
 # General Aliases
@@ -10,8 +11,8 @@ alias gc="grepCommon -i"
 alias gC="grepCommon"
 
 alias grepcn="grep --color=always $commonExclude -Irn"
-alias gm="grep $excludeMost -Iirn"
-alias gmc="grep --color=always $excludeMost -Iirn"
+# alias gm="grep $excludeMost -Iirn"
+# alias gmc="grep --color=always $excludeMost -Iirn"
 
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
@@ -35,7 +36,7 @@ alias plugs="vim ~/.vim/plugins.vim"
 alias ct="ctags -R --exclude=.git --exclude=node_modules --exclude=test --exclude=sigma --exclude=lib --exclude=api/affinity-engine/*"
 alias ff="firefox &"
 alias t="tree"
-alias f="find . -iname"
+alias f="find . -type f -iname"
 alias agi="sudo apt-get install"
 alias h="vim ~/.zsh_history"
 alias l="ls -al"

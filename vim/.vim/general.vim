@@ -43,13 +43,16 @@ nmap cf :let @" = expand("%:p")<cr>
 " nnoremap <M-e> :e!<CR>
 " nnoremap å :e!<CR>
 " nnoremap <A-e> :e!<CR>
-"
+
+" 'Ex commands' mappings
+" FIXME - These map not only at beginning of line
 ca gd Gdiff
 ca gdm Gdiff master
 ca gdt Git difftool --name-only master
 ca gb Gblame
 ca gs Gstatus
-ca gc Gcommit
+"ca gc Gcommit
+ca gcc Gcommit
 ca gl Glog
 ca gp Gpull
 

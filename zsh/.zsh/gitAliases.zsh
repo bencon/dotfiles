@@ -2,7 +2,7 @@
 
 alias g='git'
 alias gcl='git clone'
-alias ga='git add'
+#alias ga='git add'    #using for grep
 #alias gaa='git add .'
 alias gs='git status'
 alias gss='git status -s'

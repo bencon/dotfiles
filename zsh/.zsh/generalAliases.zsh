@@ -1,28 +1,43 @@
-commonExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html,htm,xml} --exclude=tags --exclude=.*"
+basicExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html,htm,xml} --exclude=tags --exclude=.*"
 dotFileExclude="--exclude=.*"
 nonCore="--exclude-dir={affinity-engine,sigma,business-logic}"
 excludeSomeDirs="--exclude-dir={.svn,.npm,.cache,node_modules,documentation,build,keycloakWorkingDir,resources,static}"
-excludeAll="$commonExclude $excludeSomeDirs $nonCore $dotFileExclude"
-excludeMost="$commonExclude $excludeSomeDirs"
+excludeAll="$basicExclude $excludeSomeDirs $nonCore $dotFileExclude"
+excludeMost="$basicExclude $excludeSomeDirs"
 
-# General Aliases
-alias grepCommon="grep --color=always $excludeAll -Irn"
-alias gc="grepCommon -i"
-alias gC="grepCommon"
+#################################################################################
+###### Grep Aliases
+#################################################################################
+alias grepExcludeAll="grep $excludeAll -Irn"
+alias grepBasic="grep $basicExclude -Irn"
 
-alias grepcn="grep --color=always $commonExclude -Irn"
-# alias gm="grep $excludeMost -Iirn"
-# alias gmc="grep --color=always $excludeMost -Iirn"
+###### general search with many filters
+alias ga="grepExcludeAll --color=always -i"
+alias gA="grepExcludeAll --color=always"
+alias gac="grepExcludeAll -i"
+alias gAc="grepExcludeAll "
 
+###### more permissive search
+# TODO - color exclusions
+alias gc="grepBasic --color=always -i"
+alias gC="grepBasic --color=always"
+
+
+###### Isolate search between types of files
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gch="grep --color=always --include=\*.h -Irn" #only search h files
 
-#alias grepnc="grep $excludeAll -Irn"
-alias gnc="grepcn -i"
-alias gnC="grepcn"
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
+
 alias egrepc="egrep --color=always -n"
+
+# alias gm="grep $excludeMost -Iirn" ### Clashes with git alias
+# alias gmc="grep --color=always $excludeMost -Iirn"
+
+#################################################################################
+###### General Aliases
+#################################################################################
 alias lessr="less -R"
 alias lr=lessr
 alias sel="pwd | xsel -i"

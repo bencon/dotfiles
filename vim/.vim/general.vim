@@ -43,6 +43,15 @@ nmap cf :let @" = expand("%:p")<cr>
 " nnoremap <M-e> :e!<CR>
 " nnoremap å :e!<CR>
 " nnoremap <A-e> :e!<CR>
+"
+ca gd Gdiff
+ca gdm Gdiff master
+ca gdt Git difftool --name-only master
+ca gb Gblame
+ca gs Gstatus
+ca gc Gcommit
+ca gl Glog
+ca gp Gpull
 
 " allow toggling between local and default mode
 function TabToggle()

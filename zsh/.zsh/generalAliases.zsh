@@ -1,7 +1,7 @@
 basicExclude="--exclude=\*.{pdb,obj,cod,map,db,dll,swp,bundle.js,min.js,sql,html,htm,xml} --exclude=tags --exclude=.*"
 dotFileExclude="--exclude=.*"
 nonCore="--exclude-dir={affinity-engine,sigma,business-logic}"
-excludeSomeDirs="--exclude-dir={.svn,.npm,.cache,node_modules,documentation,build,keycloakWorkingDir,resources,static}"
+excludeSomeDirs="--exclude-dir={.git,.svn,.npm,.cache,node_modules,documentation,build,keycloakWorkingDir,resources,static}"
 excludeAll="$basicExclude $excludeSomeDirs $nonCore $dotFileExclude"
 excludeMost="$basicExclude $excludeSomeDirs"
 

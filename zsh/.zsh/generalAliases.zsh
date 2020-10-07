@@ -22,11 +22,15 @@ alias gAc="grepExcludeAll "
 alias gc="grepBasic --color=always -i"
 alias gC="grepBasic --color=always"
 
+###### most permissive search
+alias grn="grep --color=always -iIrn"
 
 ###### Isolate search between types of files
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gch="grep --color=always --include=\*.h -Irn" #only search h files
+# alias gr="grep --color=always --include=\*.md -Irn" #only search h files
+alias gr="grepBasic --color=always --include=\*.md" #only search h files
 
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
 

@@ -10,12 +10,17 @@ excludeMost="$basicExclude $excludeSomeDirs"
 #################################################################################
 alias grepExcludeAll="grep $excludeAll -Irn"
 alias grepBasic="grep $basicExclude -Irn"
+alias grepExcludeMost="grep $excludeMost -Irn"
 
 ###### general search with many filters
 alias ga="grepExcludeAll --color=always -i"
 alias gA="grepExcludeAll --color=always"
 alias gac="grepExcludeAll -i"
 alias gAc="grepExcludeAll "
+
+###### exclude some dirs
+alias gmo="grepExcludeMost --color=always -i"  # gm clashes with git aliases
+alias gM="grep --color=always $excludeMost -Iirn"
 
 ###### more permissive search
 # TODO - color exclusions
@@ -35,9 +40,6 @@ alias gr="grepBasic --color=always --include=\*.md" #only search h files
 alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
 
 alias egrepc="egrep --color=always -n"
-
-# alias gm="grep $excludeMost -Iirn" ### Clashes with git alias
-# alias gmc="grep --color=always $excludeMost -Iirn"
 
 #################################################################################
 ###### General Aliases

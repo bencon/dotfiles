@@ -20,7 +20,7 @@ xterm*eightBitInput: false
 #define _color3        #f0dfaf
 #define _color11       #f0dfaf
 !BLU Number
-#define _color4        #8cd0d3
+#define _color4        #003D0E
 #define _color12       #8cd0d3
 !MAG Precondit
 #define _color5        #c0bed1

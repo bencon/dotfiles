@@ -25,6 +25,7 @@ alias gM="grep --color=always $excludeMost -Iirn"
 ###### more permissive search
 # TODO - color exclusions
 alias gc="grepBasic --color=always -i"
+alias gcnc="grepBasic -i"
 alias gC="grepBasic --color=always"
 
 ###### most permissive search
@@ -51,6 +52,7 @@ alias e="exit"
 alias v="stty stop '' -ixoff ; vim"
 alias ka="killall vim; killall -9 xterm"
 alias zrc="vim ~/.zshrc"
+alias vrc="vim ~/.vim/general.vim"
 alias snips="vim ~/.vim/UltiSnips/javascript.snippets"
 alias gita="vim ~/.zsh/gitAliases.zsh"
 alias plugs="vim ~/.vim/plugins.vim"

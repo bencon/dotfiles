@@ -1,5 +1,9 @@
 " should potentially split this file more logically
 
+" Load sensisble early so I can disable autoread
+runtime! plugin/sensible.vim
+set noautoread
+
 set tabstop=4
 set number
 set relativenumber
@@ -48,8 +52,9 @@ nmap , @@
 " 'Ex commands' mappings
 " FIXME - These map not only at beginning of line
 ca gd Gdiff
-ca gdm Gdiff master
-ca gdt Git difftool --name-only master
+ca gdm Gdiff $MBRANCH
+ca gdmn Gdiff main
+ca gdt Git difftool --name-only $MBRANCH
 ca gb Gblame
 ca gs Gstatus
 "ca gc Gcommit

@@ -24,3 +24,6 @@ export NVM_DIR="$HOME/.nvm"
 # Reload Herbstluftwm
 alias hr="~/.config/herbstluftwm/autostart && herbstclient reload"
 
+# TODO improve this dir
+source $HOME/myDotfiles/zsh/local.zsh
+

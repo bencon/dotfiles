@@ -1,9 +1,9 @@
 let configs = [
-\  "general",
 \  "ui",
 \  "commands",
 \  "plugins",
 \  "plugin-settings",
+\  "general",
 \]
 
 for file in configs

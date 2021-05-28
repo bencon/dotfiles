@@ -94,6 +94,11 @@ snippet d "description"
 debugger
 endsnippet
 
+#undefined
+snippet u "description"
+undefined
+endsnippet
+
 #return
 snippet r "description"
 return
@@ -161,6 +166,11 @@ endsnippet
 #console log no quotes
 snippet cln "description"
 console.log(${1:here})
+endsnippet
+
+#console trace
+snippet ct "description"
+console.trace()
 endsnippet
 
 #console error
@@ -339,33 +349,15 @@ snippet ts "Get State" i
 this.state.${1}
 endsnippet
 
-##################### Component Lifecycle
-snippet cwm "Component Will Mount" b
-componentWillMount() {
-	$1
-}
-endsnippet
-
+##################### React Lifecycle
 snippet cdm "Component Did Mount" b
 componentDidMount() {
 	$1
 }
 endsnippet
 
-snippet cwrp "Component Will Receive Props" b
-componentWillReceiveProps(nextProps) {
-	$1
-}
-endsnippet
-
 snippet scu "Should Component Update" b
 shouldComponentUpdate(nextProps, nextState) {
-	$1
-}
-endsnippet
-
-snippet cwu "Component Will Update" b
-componentWillUpdate(nextProps, nextState) {
 	$1
 }
 endsnippet

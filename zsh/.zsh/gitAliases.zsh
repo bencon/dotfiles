@@ -3,8 +3,7 @@ master=$MBRANCH
 
 alias g='git'
 alias gcl='git clone'
-#alias ga='git add'    #using for grep
-alias gad='git add'    #using for grep
+alias gad='git add'
 #alias gaa='git add .'
 alias gs='git status'
 alias gss='git status -s'
@@ -12,19 +11,17 @@ alias gsh='git show'
 alias gst='git stash'
 alias gstp='git stash pop'
 alias gl='git log'
+alias gln='git log --name-only' # print file names
 alias pull='git pull'
-#alias gup='git fetch && git rebase'
 alias gri='git rebase i'
 alias gp='git push'
 alias gpu='git push -u origin HEAD'
 alias gpf'git push -f'
-#alias gpp='git pull && git push'
 alias gpo='git push origin'
 alias gd='git diff'
 alias gdh='git diff origin/$(git symbolic-ref --short HEAD)'
 alias gdm='git diff $master'
 alias gdmn='git diff --name-only $master'
-#alias gdmn='git diff --name-only $master; set ma'
 alias gdw='git diff --color-words'
 alias gdt='git difftool --name-only $master'
 #alias gc='git commit -v'
@@ -52,4 +49,5 @@ alias rhh-='git reset --hard'
 alias gcoo='git checkout --ours'
 alias gcot='git checkout --theirs'
 
-alias example='f() { echo Your arg was $1. };f'
+# How to use an alias with parameters
+alias example='anonFunc() { echo Your arg was $1 };anonFunc'

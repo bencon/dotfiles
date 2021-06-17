@@ -12,6 +12,8 @@ alias gst='git stash'
 alias gstp='git stash pop'
 alias gl='git log'
 alias gln='git log --name-only' # print file names
+alias gld='git log --no-merges --name-only $master..' # only show commits not on main branch
+alias gldp='git log --no-merges -p $master..' # only show commits not on main branch
 alias pull='git pull'
 alias gri='git rebase i'
 alias gp='git push'
@@ -45,9 +47,12 @@ alias gmmn='git checkout $master; git pull; git checkout -; git merge --no-commi
 alias gf='git fetch'
 alias gcf='git clean -f -x'
 alias rhh='git reset --hard origin/$(git symbolic-ref --short HEAD)'
-alias rhh-='git reset --hard'
+# alias rhh-='git reset --hard'
+alias rhh-='anonFunc() { git reset --hard HEAD~$1 };anonFunc'
+alias rh-='anonFunc() { git reset HEAD~$1 };anonFunc'
 alias gcoo='git checkout --ours'
 alias gcot='git checkout --theirs'
+alias gco-='anonFunc() { git checkout HEAD~$1 };anonFunc'
 
 # How to use an alias with parameters
 alias example='anonFunc() { echo Your arg was $1 };anonFunc'

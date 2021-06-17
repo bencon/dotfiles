@@ -1,8 +1,9 @@
 " should potentially split this file more logically
+let master=$MBRANCH
 
 " Load sensisble early so I can disable autoread
 runtime! plugin/sensible.vim
-set noautoread
+" set noautoread
 
 set tabstop=4
 set number
@@ -15,6 +16,9 @@ set list
 set noswapfile
 set ignorecase
 set smartcase
+
+" syncs system clipboard with default yank register
+set clipboard=unnamedplus
 
 " scss specific settings to avoid slowdowns
 autocmd Filetype scss setlocal norelativenumber nocursorline
@@ -53,7 +57,7 @@ nmap , @@
 " FIXME - These map not only at beginning of line
 ca gd Gdiff
 ca gdm Gdiff $MBRANCH
-ca gdmn Gdiff main
+ca gdmn Gdiff origin/main
 ca gdt Git difftool --name-only $MBRANCH
 ca gb Gblame
 ca gs Gstatus

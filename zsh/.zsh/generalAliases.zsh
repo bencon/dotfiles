@@ -38,9 +38,13 @@ alias gch="grep --color=always --include=\*.h -Irn" #only search h files
 # alias gr="grep --color=always --include=\*.md -Irn" #only search h files
 alias gr="grepBasic --color=always --include=\*.md" #only search h files
 
-alias grepf="grep $excludeAll -rIl" # get file name only to pass to other scripts like sed
+alias grepf="grep $excludeMost -rIli" # get file name only to pass to other scripts like sed
 
 alias egrepc="egrep --color=always -n"
+
+
+###### Populate vim arglist with grepped files
+alias gfv='anonFunc() { grep --exclude-dir={.git,.svn,.npm,.cache,node_modules,documentation,build,keycloakWorkingDir,resources,static} -rIli "$1" | xargs vim };anonFunc'
 
 #################################################################################
 ###### General Aliases

@@ -18,7 +18,7 @@ set ignorecase
 set smartcase
 
 " syncs system clipboard with default yank register
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " scss specific settings to avoid slowdowns
 autocmd Filetype scss setlocal norelativenumber nocursorline
@@ -31,6 +31,8 @@ nnoremap Z :w!<CR>
 nnoremap E :e!<CR>
 nnoremap Q :q!<CR>
 nnoremap <S-f> <C-f>
+" paste without overwriting copy register
+nnoremap [ V"0p
 nmap <M-a> <Plug>(ale_toggle)
 " nmap <M-g> :GBlame<CR> // doesn't work ?
 " nnoremap <space>gb :ALEToggle<CR>

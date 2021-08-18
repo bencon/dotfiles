@@ -32,6 +32,7 @@ alias gct='git commit -am "temp"'
 alias gtu='git reset HEAD~1'
 alias gb='git branch'
 alias gbd='git branch -D'
+alias gbr='git branch -r' # list all remote branches
 alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
 alias gc-='git checkout -'

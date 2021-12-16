@@ -13,6 +13,7 @@ alias gstp='git stash pop'
 alias gl='git log'
 alias gln='git log --name-only' # print file names
 alias gld='git log --no-merges --name-only $master..' # only show commits not on main branch
+alias glg='git log --graph --decorate --oneline'
 alias gldp='git log --no-merges -p $master..' # only show commits not on main branch
 alias pull='git pull'
 alias gri='git rebase i'

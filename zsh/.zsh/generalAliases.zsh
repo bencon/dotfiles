@@ -33,6 +33,7 @@ alias grn="grep --color=always -iIrn"
 
 ###### Isolate search between types of files
 alias gcj="grep --color=always --include=\*.js -Irn" #only search js files
+alias gcts="grep --color=always --include=\*.ts -Irn" #only search js files
 alias gcs="grep --color=always --include=\*.scss -Irn" #only search scss files
 alias gch="grep --color=always --include=\*.h -Irn" #only search h files
 # alias gr="grep --color=always --include=\*.md -Irn" #only search h files

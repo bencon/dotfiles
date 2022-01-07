@@ -65,7 +65,7 @@ ca gb Gblame
 ca gs Gstatus
 "ca gc Gcommit
 ca gcc Gcommit
-ca gl Glog
+ca gl Gclog
 ca gp Gpull
 
 " allow toggling between local and default mode

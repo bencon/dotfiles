@@ -1,28 +1,8 @@
-Some notes on packages needed to setup my system. I intend to convert this to vagrantfile
+# Some configuration for setting up a fresh machine to use dotfiles:
 
-tree
-lightdm
-stow
-herbstluftwm
-python-pip
-xsel
-curl
-git
-cifs-utils
-zsh
-firefox
-markdown
-xdotool
-xclip
-apache2 subversion libapache2-mod-svn libapache2-svn libsvn-dev
-feh # set desktop background
-
-#svn
-sudo a2enmod dav dav_svn
-sudo service apache2 restart
-
-# vim8
-sudo add-apt-repository ppa:jonathonf/vim && sudo apt update && sudo apt install vim-gtk
+sudo apt install tree lightdm stow herbstluftwm python3-pip xsel curl git cifs-utils zsh firefox markdown xdotool xclip vim-gtk
+# feh sets desktop background
+# vim-gtk is vim compiled with clipboard support
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -31,81 +11,23 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # start visual desktop manager
 sudo service lightdm start
 
-sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-sudo VBoxClient --clipboard
-sudo VBoxClient --draganddrop
-sudo VBoxClient --display
-sudo VBoxClient --checkhostversion
-sudo VBoxClient --seamless
-
-#zsh
-sudo apt-get install zsh
-sudo usermod -s /bin/zsh <username>
-
 #oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-#Attempts to get X11 workign - probably very excessive - I don't think this did me any good
-sudo apt-get install xorg openbox
-sudo apt-get install ubuntu-desktop ubuntu-standard ubuntu-minimal
-
-# powerline fonts - is this useless?
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-
-# for universal ctags
-sudo apt-get install autoconf
-
-
-# store git credentials and other settings
-git config credential.helper store
-git config --global push.default simple
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Fix all files detected as modified due to line endings:
 git config --global core.autocrlf true
 
 # Get fira font
-wget https://github.com/carrois/Fira/archive/master.zip
-unzip master.zip
-sudo mkdir -p /usr/share/fonts/opentype/fira_code
-sudo mkdir -p /usr/share/fonts/opentype/fira_mono
-sudo mkdir -p /usr/share/fonts/opentype/fira_sans
-sudo cp FiraSans-master/Fira_Code_3_2/Fonts/FiraCode_OTF_32/* /usr/share/fonts/opentype/fira_code
-sudo cp FiraSans-master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/* /usr/share/fonts/opentype/fira_mono
-sudo cp FiraSans-master/Fira_Sans_4_3/Fonts/FiraSans_OTF_4301/Normal/Roman/* /usr/share/fonts/opentype/fira_sans
-sudo cp FiraSans-master/Fira_Sans_4_3/Fonts/FiraSans_OTF_4201/Normal/Italic/* /usr/share/fonts/opentype/fira_sans
-rm -rf Fira-master
-
-sudo apt-get install exuberant-ctags
+./setupScripts/firaInstall
 
 # load Xresources
 xrdb ~/.Xresources
 
-# needed for folder sharing ( probably not actually needed)
-sudo apt-get -y install dkms build-essential linux-headers-$(uname -r) virtualbox-guest-additions-iso
-
-# newer node version
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# linters
-npm install -g sass-lint
-npm install -g eslint
-
 # vim markdown viewer
 pip install grip
 
-notes:
-from vim run :PlugInstall
+# prints display manager:
+grep '/usr/s\?bin' /etc/systemd/system/display-manager.service
+lightdm --show-config
 
-# Use hosts dns resolver:
-https://superuser.com/questions/641933/how-to-get-virtualbox-vms-to-use-hosts-dns
-VBoxManage modifyvm "<VM name>" --natdnshostresolver1 on
-As a result, guest OS DNS requests will be intercepted and resolved using host DNS API, rather than having guest OS connect to external DNS servers as with  --natdnsproxy1 on.
-You can get the name of the VM by running VBoxManage list runningvms.
+sudo reboot

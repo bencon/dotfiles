@@ -23,6 +23,8 @@ set smartcase
 " scss specific settings to avoid slowdowns
 autocmd Filetype scss setlocal norelativenumber nocursorline
 
+"(:help quoteplus), the "+ register corresponds to the 'CLIPBOARD' selection in X11, while the "* register corresponds to the 'PRIMARY' selection
+" mouse middle click vs shift+insert
 noremap - "+y
 noremap _ "+p
 vnoremap = "*y
@@ -61,7 +63,8 @@ ca gd Gdiff
 ca gdm Gdiff $MBRANCH
 ca gdmn Gdiff origin/main
 ca gdt Git difftool --name-only $MBRANCH
-ca gb Gblame
+" ca gb Gblame
+ca gb Git blame
 ca gs Gstatus
 "ca gc Gcommit
 ca gcc Gcommit

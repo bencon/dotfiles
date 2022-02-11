@@ -8,10 +8,10 @@ sudo apt install tree lightdm stow herbstluftwm python3-pip xsel curl git cifs-u
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# start visual desktop manager
+# Start visual desktop manager
 sudo service lightdm start
 
-#oh my zsh
+# Oh my zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Fix all files detected as modified due to line endings:
@@ -20,14 +20,17 @@ git config --global core.autocrlf input
 # Get fira font
 ./setupScripts/firaInstall
 
-# load Xresources
+# Load Xresources
 xrdb ~/.Xresources
 
-# vim markdown viewer
+# Vim markdown viewer
 pip install grip
 
-# prints display manager:
+# Prints display manager:
 grep '/usr/s\?bin' /etc/systemd/system/display-manager.service
 lightdm --show-config
+
+# Create permanent env variables
+echo 'export MBRANCH=develop' >> ~/.zshenv
 
 sudo reboot

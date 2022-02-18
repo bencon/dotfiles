@@ -112,4 +112,8 @@ nmap ,cl :let @+=expand("%:p")<CR>
 " that the crome debugger recognizes files updates
 set backupcopy=yes
 
-set tags=./tags;~/insight
+" Recognize tsx as typescript
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END

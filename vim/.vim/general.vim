@@ -117,3 +117,6 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
+
+" always vertical diff split
+set diffopt+=vertical

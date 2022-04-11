@@ -16,7 +16,7 @@ alias gld='git log --no-merges --name-only $master..' # only show commits not on
 alias glg='git log --graph --decorate --oneline'
 alias gldp='git log --no-merges -p $master..' # only show commits not on main branch
 alias pull='git pull'
-alias gri='git rebase i'
+alias gri='git rebase -i'
 alias gp='git push'
 alias gpu='git push -u origin HEAD'
 alias gpf'git push -f'
@@ -50,14 +50,16 @@ alias gmmn='git checkout $master; git pull; git checkout -; git merge --no-commi
 alias gf='git fetch'
 alias gcf='git clean -f -x'
 alias grv='anonFunc() { git checkout -f $1 -- . };anonFunc'
-#alias rhh='git reset --hard origin/$(git symbolic-ref --short HEAD)'
-alias rhh='git reset --hard HEAD'
+alias rhh='git reset --hard origin/$(git symbolic-ref --short HEAD)'
+alias rhha='git reset --hard HEAD'
 # alias rhh-='git reset --hard'
 alias rhh-='anonFunc() { git reset --hard HEAD~$1 };anonFunc'
 alias rh-='anonFunc() { git reset HEAD~$1 };anonFunc'
 alias gcoo='git checkout --ours'
 alias gcot='git checkout --theirs'
 alias gco-='anonFunc() { git checkout HEAD~$1 };anonFunc'
+alias grv='git remote -v'
+alias setHooks='git config core.hooksPath ~/dotfiles/gitHooks'
 
 # How to use an alias with parameters
 alias example='anonFunc() { echo Your arg was $1 };anonFunc'

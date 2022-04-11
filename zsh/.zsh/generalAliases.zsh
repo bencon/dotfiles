@@ -70,6 +70,9 @@ alias h="vim ~/.zsh_history"
 alias l="ls -al"
 # alias diff="colordiff"
 
+# Restart network
+alias nr="sudo nmcli networking off; sudo nmcli networking on"
+
 # custom search by given file type
 gfile() {
    if (( $# != 2 )) ; then

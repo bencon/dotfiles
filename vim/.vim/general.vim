@@ -16,6 +16,7 @@ set list
 set noswapfile
 set ignorecase
 set smartcase
+set nofixeol " Don't add standard Unix eol character if it doesn't already exist
 
 " syncs system clipboard with default yank register
 " set clipboard=unnamedplus

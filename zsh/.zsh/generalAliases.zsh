@@ -71,7 +71,7 @@ alias l="ls -al"
 # alias diff="colordiff"
 
 # Restart network
-alias nr="sudo nmcli networking off; sudo nmcli networking on"
+alias rn="sudo nmcli networking off; sudo nmcli networking on"
 
 # custom search by given file type
 gfile() {

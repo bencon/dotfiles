@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 # master=$MBRANCH
 
-alias g='git'
 alias gcl='git clone'
 alias gad='git add'
 alias gaa='git add -A'
@@ -15,6 +14,7 @@ alias gln='git log --name-only' # print file names
 alias gld='git log --no-merges --name-only $(pmn)..' # only show commits not on main branch
 alias glg='git log --graph --decorate --oneline'
 alias gldp='git log --no-merges -p $(pmn)..' # only show commits not on main branch
+alias glm='git log --first-parent $(pmn)' # Show merge commits to main branch
 alias pull='git pull'
 alias gri='git rebase -i'
 alias gp='git push'
@@ -23,7 +23,8 @@ alias gpf'git push -f'
 alias gpo='git push origin'
 alias gd='anonFunc() { git diff $1 -- . ":!package-lock.json" };anonFunc'
 alias gds='git diff --staged'
-alias gdh='git diff origin/$(git symbolic-ref --short HEAD)'
+alias gdho='git diff origin/$(git symbolic-ref --short HEAD)'
+alias gdh='git diff HEAD'
 alias gdm='git diff $(pmn)'
 alias gdmn='git diff --name-only $(pmn)'
 alias gdw='git diff --color-words'

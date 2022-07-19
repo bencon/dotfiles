@@ -64,6 +64,7 @@ alias setHooks='git config core.hooksPath ~/dotfiles/gitHooks'
 alias fileCase='git rm -r --cached .; git add --all .' # changes to file name case show in git status
 alias pmn='git remote show origin | sed -n "/HEAD branch/s/.*: //p"'
 alias myt='echo $(pmn)'
+alias gbda='git checkout $(pmn); git branch | grep -v $(pmn) | xargs git branch -D '
 
 # How to use an alias with parameters
 alias example='anonFunc() { echo Your arg was $1 };anonFunc'
